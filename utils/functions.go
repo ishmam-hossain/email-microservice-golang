@@ -17,6 +17,8 @@ func InitNSQ() {
 	if err != nil {
 		log.Panic(err)
 	}
+
+	log.Println("Connected to NSQ!")
 }
 
 // NsqPublish publishes data to queue
@@ -27,5 +29,5 @@ func NsqPublish(topicName string, data []byte) error {
 // KillNSQ kills the connection 
 func KillNSQ() {
 	nsqWriter.Stop()
-	log.Fatal("killed!")
+	log.Fatal("killed NSQ connection!")
 }
