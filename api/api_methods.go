@@ -8,6 +8,8 @@ import (
 
 	"../utils"
 
+	"time"
+
 )
 
 // HomePage is the index route
@@ -79,4 +81,23 @@ func ArrayTest(w http.ResponseWriter, r *http.Request ) {
 
 	w.Header().Set("content-type", "application/json")
 	w.Write(response)
+}
+
+
+// Test1 is the index route
+func Test1(w http.ResponseWriter, r *http.Request ) {
+	for ;true; {
+		time.Sleep(time.Second)
+		fmt.Println("Test 1")
+	}
+
+}
+
+
+// Test2 is the index route
+func Test2(w http.ResponseWriter, r *http.Request ) {
+	for ;true; {
+		time.Sleep(2 * time.Second)
+		fmt.Println("Test 2")
+	}
 }
